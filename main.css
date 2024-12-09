@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +8,12 @@ body{
     background-color: #12161d;
     font-family: 'Orbitron';
     height: 2000px;
+}
+.logo{
+    height: 100%;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
 }
 nav{
     position: fixed;
@@ -37,13 +42,13 @@ nav a{
     padding: 0 40px;
     display: flex;
     align-items: center;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: 0.3s;
 }
 nav a:hover{
     background-color: rgba(72, 168, 72, 0.6);
-    color: whitesmoke;
+    color: #12161d;
     border-radius: 20px;
 }
 nav li:first-child{
@@ -71,6 +76,54 @@ nav li:first-child{
 .menuButton{
     display: none;
 }
+
+/*----------------slider-------------------*/
+.sliderd{
+    display: flex;
+    justify-content: center;
+    margin-top: 73px;
+}
+
+.slider {
+    width: 1500px; 
+    height: 720px; 
+    box-shadow: 0 0 25px 15px #07090c;
+    background: url(cyberpunk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    animation: slide 10s infinite;
+}
+@keyframes slide{
+    25%{
+        background: url(cyberpunk.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+    }
+    50%{
+        background: url(forza.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+    }
+    75%{
+        background: url(eldenring.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+    }
+    100%{
+        background: url(wiedzmin.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+    }
+}
+
+/*--------RESPONSYWNOSC---------*/
+
+
 @media(max-width: 800px){
     .hide{
         display: none;
@@ -78,10 +131,21 @@ nav li:first-child{
     .menuButton{
         display: block;
     }
+    .slider {
+        width: 95vw; 
+        height: 40vh; 
+    }
+    
 }
 
 @media(max-width: 400px){
     .sidebar{
         width: 100%;
     } 
+    .slider {
+        width: 100vw; 
+        height: 50vh; 
+    }
+    
+    
 }
