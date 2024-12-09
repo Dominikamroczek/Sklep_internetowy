@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <title>Strona główna</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         <ul>
             <li class="logo"><img src="logo.png" alt="logo" style="height: 80px;"></li>
             <li class="hide"><a href="#">Gry</a></li>
-            <li class="hide"><a href="#">O nas</a></li>
+            <li class="hide"><a href="#" onclick="showModal()">O nas</a></li>
             <li class="hide"><a href="#">Informacje</a></li>
             <li class="hide"><a href="#">Pomoc</a></li>
             <li class="menuButton" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#12161d"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
@@ -27,7 +28,26 @@
     
     <div class="sliderd">
         <div class="slider">
+            <div class="polecanegry" style="display: flex; justify-content: flex-start; margin-top: 10px; padding-left: 15px;">
+                <h1 style="color: white; text-shadow: 2px 2px 10px rgb(28, 80, 28); text-transform: uppercase; font-size: 50px;">Polecane gry</h1>
+            </div>
+        </div>
+    </div>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <h2>O nas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sapiente, possimus, accusantium unde
+                dignissimos ipsum veniam sit magnam animi eveniet voluptate quia maiores error enim mollitia nihil,
+                molestiae architecto quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nulla sunt
+                quod voluptas magnam sit veritatis explicabo suscipit obcaecati consequatur praesentium omnis, odit,
+                laboriosam, perferendis autem repellat maiores. Incidunt, aut. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Aperiam voluptatum numquam ducimus, illo, fugiat, maxime quaerat cum eos minima magnam
+                consequuntur libero voluptatibus cumque fugit aut reprehenderit quasi. Non, provident! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Deleniti illum tempore quasi at sint praesentium. Ipsa
+                repellendus, dignissimos numquam accusamus asperiores odio inventore unde voluptatibus amet enim facere
+             </p>
         </div>
     </div>
       
