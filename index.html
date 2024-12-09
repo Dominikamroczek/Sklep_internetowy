@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modal</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e74c3c;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Ukrycie domyślne */
+    position: fixed; /* Pozycja modal */
+    z-index: 1; /* Warstwa nad innymi elementami */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Dodanie przewijania */
+    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* Środek okna */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+   </style>
 </head>
 <body>
-    
+    <button id="openModal" class="btn">Pokaż Okienko</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Witaj w naszym sklepie!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt magnam exercitationem nesciunt facere sequi at ad est. Ad corporis, nisi fugit dolorum molestias quos eligendi voluptas, accusantium, consectetur id commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellat a accusamus molestias rerum, cupiditate omnis qui ducimus reprehenderit voluptate! Tempore voluptates obcaecati in expedita maiores facilis. Excepturi, laboriosam iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorum vitae culpa molestias saepe obcaecati id, quidem magni natus hic, pariatur quo odio? Veritatis doloribus nobis, molestiae voluptate sapiente quas? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam consequatur debitis officiis. Amet eaque debitis hic rerum illo accusantium. Illum vel similique vero perferendis quibusdam sunt molestiae blanditiis veniam voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, in laborum neque accusantium modi excepturi nemo quo suscipit ullam distinctio, nihil sint aut et nulla perferendis, assumenda voluptate provident voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae optio repudiandae quod sequi quas qui assumenda eveniet repellendus officiis dolor? Deserunt quam ratione modi pariatur repellendus, accusamus et sed voluptate!.</p>
+        </div>
+    </div>
+
+    <script>
+        // Pobierz elementy
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("openModal");
+const span = document.querySelector(".close");
+
+// Otwórz modal po kliknięciu przycisku
+btn.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+// Zamknij modal po kliknięciu X
+span.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Zamknij modal po kliknięciu poza okienkiem
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+    </script>
 </body>
 </html>

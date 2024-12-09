@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="onas.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+
+<body style="background-color: #12161d;">
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px"
+                        viewBox="0 -960 960 960" width="26px" fill="#12161d">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
+            <li><a href="#">Gry</a></li>
+            <li><a href="#" onclick="showModal()">O nas</a></li>
+            <li><a href="#">Informacje</a></li>
+            <li><a href="#">Pomoc</a></li>
+        </ul>
+        <ul>
+            <li class="logo"><img src="logo.png" alt="logo" style="height: 80px;"></li>
+            <li class="hide"><a href="#">Gry</a></li>
+            <li class="hide"><a href="#" onclick="showModal()">O nas</a></li>
+            <li class="hide"><a href="#">Informacje</a></li>
+            <li class="hide"><a href="#">Pomoc</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="26px" viewBox="0 -960 960 960" width="26px" fill="#12161d">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+        </ul>
+    </nav>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal()">&times;</span>
+            <h2>O nas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sapiente, possimus, accusantium unde
+                dignissimos ipsum veniam sit magnam animi eveniet voluptate quia maiores error enim mollitia nihil,
+                molestiae architecto quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nulla sunt
+                quod voluptas magnam sit veritatis explicabo suscipit obcaecati consequatur praesentium omnis, odit,
+                laboriosam, perferendis autem repellat maiores. Incidunt, aut. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Aperiam voluptatum numquam ducimus, illo, fugiat, maxime quaerat cum eos minima magnam
+                consequuntur libero voluptatibus cumque fugit aut reprehenderit quasi. Non, provident! Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Deleniti illum tempore quasi at sint praesentium. Ipsa
+                repellendus, dignissimos numquam accusamus asperiores odio inventore unde voluptatibus amet enim facere
+             </p>
+        </div>
+    </div>
+
+    <script src="onas.js"></script>
+</body>
+
+</html>
