@@ -97,27 +97,34 @@ nav li:first-child{
     animation: slide 10s infinite;
 }
 @keyframes slide{
-    25%{
+    12%{
         background: url(cyberpunk.jpg);
         
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center;
     }
-    50%{
+    37%{
         background: url(forza.jpg);
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center;
     }
-    75%{
+    62%{
         background: url(eldenring.jpg);
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center;
     }
-    100%{
+    87%{
         background: url(wiedzmin.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;
+    }
+    100%{
+        background: url(cyberpunk.jpg);
+        
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center;
