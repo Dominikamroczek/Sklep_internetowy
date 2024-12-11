@@ -24,3 +24,16 @@ window.addEventListener("click", (event) => {
         hideModal();
     }
 });
+window.addEventListener("click", (event) => {
+    const modal1 = document.getElementById("modal1");
+    if (event.target === modal1) {
+        closeModal1();
+    }
+});
+function openModal1(id) {
+    document.getElementById(`modal${id}`).style.display = "flex";
+}
+
+function closeModal1(id) {
+    document.getElementById(`modal${id}`).style.display = "none";
+}
