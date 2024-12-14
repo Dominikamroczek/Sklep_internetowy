@@ -199,6 +199,11 @@ nav li:first-child{
     padding: 20px;
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
+.box1 p1{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
 .box1 img {
     display: flex;
     margin-top: 10px;
@@ -208,7 +213,7 @@ nav li:first-child{
     border-radius: 5px;
 }
 .box1 button {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 8px 12px;
     background-color: rgb(72, 168, 72);
     color: white;
@@ -253,7 +258,7 @@ nav li:first-child{
 }
 .container2 button {
     margin-top: 30px;
-    padding: 20pxx;
+    padding: 12px 19px;
     background-color: rgb(72, 168, 72);
     color: white;
     border: none;
