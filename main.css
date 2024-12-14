@@ -133,7 +133,7 @@ nav li:first-child{
 
 /*-------Okienko-----*/
 
-.modal {
+.onas{
     display: none; 
     position: fixed;
     left: 0;
@@ -145,7 +145,7 @@ nav li:first-child{
     justify-content: center;
 }
 
-.modal-content {
+.containerOnas {
     background-color: rgb(255, 255, 255);;
     padding: 20px;
     border-radius: 10px;
@@ -201,24 +201,26 @@ nav li:first-child{
 }
 .box1 img {
     display: flex;
+    margin-top: 10px;
+    margin-left: 38px;
     max-width: 250px;
     height: auto;
     border-radius: 5px;
 }
 .box1 button {
-    margin-top: 10px;
+    margin-top: 30px;
     padding: 8px 12px;
-    background-color: #007BFF;
+    background-color: rgb(72, 168, 72);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 .box1 button:hover {
-    background-color: #0056b3;
+    background-color: rgb(46, 112, 46);
 }
 
-.modal1 {
+.okno1 {
     display: none;
     position: fixed;
     top: 0;
@@ -229,39 +231,44 @@ nav li:first-child{
     justify-content: center;
     align-items: center; 
 }
-.modal-content1 {
+.container2 {
     background-color: #25282e;
     color: white;
-    box-shadow: 0 0 160px rgb(72, 168, 72);
-    padding: 20px;
-    border-radius: 8px;
+    box-shadow: 0 0 50px rgb(46, 112, 46);
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    width: 80%;
-    max-width: 500px;
+    width: 450px;
 }
-.modal-content1 img {
-    max-width: 100%;
+.container2 img {
+    width: 300px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 5px;
 }
-.modal-content1 h21 {
-    margin: 10px 0;
+.container2 h2 {
+    font-size: 30px;
 }
-.modal-content1 p1 {
-    margin: 10px 0;
+.container2 p1 {
+    font-size: 20px;
 }
-.close1 {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #FF4D4D;
+.container2 button {
+    margin-top: 30px;
+    padding: 20pxx;
+    background-color: rgb(72, 168, 72);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
 }
-.close1:hover {
-    background-color: white
+.container2 button:hover {
+    background-color: rgb(46, 112, 46);
 }
+.container2 a{
+    text-decoration: none;
+    color: white;
+}
+
 
 /*--------RESPONSYWNOSC---------*/
 

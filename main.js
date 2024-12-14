@@ -7,33 +7,33 @@ function hideSidebar(){
     sidebar.style.display = 'none'
 }
 
-function showModal() {
-    const modal = document.getElementById("modal");
+function showOnas() {
+    const modal = document.getElementById("onas1");
     modal.style.display = "flex"; 
 }
 
 
-function hideModal() {
-    const modal = document.getElementById("modal");
+function hideOnas() {
+    const modal = document.getElementById("onas1");
     modal.style.display = "none"; 
 }
 
 window.addEventListener("click", (event) => {
-    const modal = document.getElementById("modal");
+    const modal = document.getElementById("onas1");
     if (event.target === modal) {
         hideModal();
     }
 });
 window.addEventListener("click", (event) => {
-    const modal1 = document.getElementById("modal1");
+    const modal1 = document.getElementById("okno1");
     if (event.target === modal1) {
         closeModal1();
     }
 });
 function openModal1(id) {
-    document.getElementById(`modal${id}`).style.display = "flex";
+    document.getElementById(`okno${id}`).style.display = "flex";
 }
 
 function closeModal1(id) {
-    document.getElementById(`modal${id}`).style.display = "none";
+    document.getElementById(`okno${id}`).style.display = "none";
 }
