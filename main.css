@@ -25,6 +25,7 @@ nav{
     background-color: rgba(46, 112, 46, 0.8);
     backdrop-filter: blur(3px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
 nav ul{
     width: 100%;
@@ -199,7 +200,7 @@ nav li:first-child{
     padding: 20px;
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
-.box1 p1{
+.box1 p{
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -253,7 +254,7 @@ nav li:first-child{
 .container2 h2 {
     font-size: 30px;
 }
-.container2 p1 {
+.container2 p {
     font-size: 20px;
 }
 .container2 button {
@@ -281,15 +282,25 @@ nav li:first-child{
 @media(max-width: 800px){
     .hide{
         display: none;
+        
     }
     .menuButton{
         display: block;
+        cursor: pointer;
+    }
+    .sidebar{
+        display: flex;
     }
     .slider {
         width: 95vw; 
         height: 40vh; 
     }
-    
+    .container1{
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        
+    }
 }
 
 @media(max-width: 400px){
@@ -300,6 +311,5 @@ nav li:first-child{
         width: 100vw; 
         height: 50vh; 
     }
-    
     
 }
