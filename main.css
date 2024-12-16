@@ -1,20 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-body{
-    
+
+body {
+    min-height: 100px;
     background-color: #12161d;
     font-family: 'Orbitron';
 }
-.logo{
+
+.logo {
     height: 100%;
     padding: 0 40px;
     display: flex;
     align-items: center;
 }
-nav{
+
+nav {
     position: fixed;
     display: flex;
     top: 0;
@@ -26,17 +30,20 @@ nav{
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     z-index: 999;
 }
-nav ul{
+
+nav ul {
     width: 100%;
     list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-nav li{
+
+nav li {
     height: 50px;
 }
-nav a{
+
+nav a {
     font-size: 20px;
     height: 100%;
     padding: 0 40px;
@@ -46,15 +53,18 @@ nav a{
     text-decoration: none;
     transition: 0.3s;
 }
-nav a:hover{
+
+nav a:hover {
     background-color: rgba(72, 168, 72, 0.6);
     color: #12161d;
     border-radius: 20px;
 }
-nav li:first-child{
+
+nav li:first-child {
     margin-right: auto;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
     top: 0;
     right: 0;
@@ -67,18 +77,21 @@ nav li:first-child{
     align-items: flex-start;
     justify-content: flex-start;
 }
-.sidebar li{
+
+.sidebar li {
     width: 100%;
 }
-.sidebar a{
+
+.sidebar a {
     width: 100%;
 }
-.menuButton{
+
+.menuButton {
     display: none;
 }
 
 /*----------------slider-------------------*/
-.sliderd{
+.sliderd {
     display: flex;
     justify-content: center;
     margin-top: 73px;
@@ -86,67 +99,73 @@ nav li:first-child{
 
 .slider {
     margin-top: 20px;
-    width: 1500px; 
+    width: 1500px;
     border-radius: 25px;
-    height: 720px; 
+    height: 720px;
     box-shadow: 0 0 25px 15px #07090c;
     background: url(cyberpunk.jpg);
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     animation: slide 10s infinite;
 }
-@keyframes slide{
-    12%{
+
+@keyframes slide {
+    12% {
         background: url(cyberpunk.jpg);
-        
+
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
-    37%{
+
+    37% {
         background: url(forza.jpg);
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
-    62%{
+
+    62% {
         background: url(eldenring.jpg);
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
-    87%{
+
+    87% {
         background: url(wiedzmin.jpeg);
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
-    100%{
+
+    100% {
         background: url(cyberpunk.jpg);
-        
+
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
 }
 
 /*-------Okienko-----*/
 
-.onas{
-    display: none; 
+.onas {
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
 }
 
 .containerOnas {
-    background-color: rgb(255, 255, 255);;
+    background-color: rgb(255, 255, 255);
+    ;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 160px rgb(72, 168, 72);
@@ -170,7 +189,7 @@ nav li:first-child{
 
 /*-----Gry-----*/
 
-.gry h2{
+.gry h2 {
     margin-top: 50px;
     font-size: 40px;
     margin-bottom: 30px;
@@ -179,6 +198,7 @@ nav li:first-child{
     color: white;
     text-transform: uppercase;
 }
+
 .container1 {
     display: flex;
     justify-content: center;
@@ -187,6 +207,7 @@ nav li:first-child{
     margin-left: 30px;
     gap: 40px;
 }
+
 .box1 {
     width: 330px;
     height: 430px;
@@ -199,11 +220,13 @@ nav li:first-child{
     padding: 20px;
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
-.box1 p{
+
+.box1 p {
     display: flex;
     justify-content: center;
     margin-top: 15px;
 }
+
 .box1 img {
     display: flex;
     margin-top: 10px;
@@ -212,6 +235,7 @@ nav li:first-child{
     height: auto;
     border-radius: 5px;
 }
+
 .box1 button {
     margin-top: 20px;
     padding: 8px 12px;
@@ -221,6 +245,7 @@ nav li:first-child{
     border-radius: 4px;
     cursor: pointer;
 }
+
 .box1 button:hover {
     background-color: rgb(46, 112, 46);
 }
@@ -232,10 +257,11 @@ nav li:first-child{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
+
 .container2 {
     background-color: #25282e;
     color: white;
@@ -245,17 +271,21 @@ nav li:first-child{
     text-align: center;
     width: 450px;
 }
+
 .container2 img {
     width: 300px;
     height: auto;
     border-radius: 5px;
 }
+
 .container2 h2 {
     font-size: 30px;
 }
+
 .container2 p {
     font-size: 20px;
 }
+
 .container2 button {
     margin-top: 30px;
     padding: 12px 19px;
@@ -266,15 +296,23 @@ nav li:first-child{
     cursor: pointer;
     text-decoration: none;
 }
+
 .container2 button:hover {
     background-color: rgb(46, 112, 46);
 }
-.container2 a{
+
+.container2 a {
     text-decoration: none;
     color: white;
 }
 
 /*--------------BANERY--------*/
+.container3 {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
 
 .amongustext {
     position: absolute;
@@ -282,9 +320,14 @@ nav li:first-child{
     top: 40%;
     font-size: 100px;
     text-shadow: 4px 2px 9px rgb(72, 168, 72);
-  }
+}
 
-.button_amongus{
+.container3 img {
+    width: 1900px;
+    height: 580px;
+}
+
+.button_amongus {
     position: absolute;
     left: 46%;
     top: 63%;
@@ -296,7 +339,8 @@ nav li:first-child{
     cursor: pointer;
     text-decoration: none;
 }
-.button_ghost{
+
+.button_ghost {
     position: absolute;
     left: 46%;
     bottom: 12%;
@@ -314,34 +358,38 @@ nav li:first-child{
 .container3 button:hover {
     background-color: rgb(46, 112, 46);
 }
-.container3 a{
+
+.container3 a {
     text-decoration: none;
     color: white;
 }
 
 /*-------STOPKA--------*/
 
-.footer p{
+.footer p {
     margin-bottom: 25px;
 }
-.footer a{
+
+.footer a {
     text-decoration: none;
 }
-footer{
+
+footer {
     background-color: #12161d;
     text-align: center;
     text-transform: uppercase;
     padding-top: 30px;
     margin-top: auto;
-    
+
 }
-footer li{
+
+footer li {
     list-style: none;
     display: inline-block;
     margin: 10px;
 }
 
-.ikony a{
+.ikony a {
     background: rgb(46, 112, 46);
     color: #12161d;
     padding: 15px;
@@ -349,68 +397,252 @@ footer li{
     display: flex;
     font-size: 25px;
 }
-.ikony a:hover{
+
+.ikony a:hover {
     color: white;
 }
-.footerMenu a{
+
+.footerMenu a {
     color: white;
     display: flex;
     justify-content: center;
     font-size: 20px;
 }
-.footerMenu a:hover{
+
+.footerMenu a:hover {
     color: rgb(46, 112, 46);
 }
-.footerCopyright{
+
+.footerCopyright {
     background-color: rgb(46, 112, 46);
     color: aliceblue;
     padding: 15px;
     margin-top: 30px;
     font-size: 20px;
 }
-.footerCopyright p{
+
+.footerCopyright p {
     margin-bottom: 0px;
     text-align: center;
 }
 
 
 /*--------RESPONSYWNOSC---------*/
-
-
-@media(max-width: 800px){
-    .hide{
-        display: none;
-        
+/*@media(max-width: 1024px){
+    .sliderd{
+        margin-top: 14%;
+        width: 100%;
+        padding-left: 40%;
     }
-    .menuButton{
+    .slider{
+        width: 150vw;
+        height: 70vh;
+    }
+    .gry h2{
+        margin-left: 80%;
+        text-align: center;
+    }
+    .box1{
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .box1 p{
+        font-size: 25px;
+    }
+    .box1 button{
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+    .close{
+        margin-top: 30px;
+    }
+    .containerOnas{
+        width: 800px;
+        height: 900px;
+        font-size: 30px;  
+    }
+    .footer{
+        width: 1900px;
+        font-size: 40px;
+    }
+    .amongustext{
+        left: 58%;
+        width: 70%;
+    }
+    .button_amongus{
+        left: 85%;
+        padding: 18px 59px;
+        font-size: 20px;
+    }
+    .button_ghost{
+        left: 85%;
+        padding: 14px 59px;
+        font-size: 20px;
+    }
+    .ikony a{
+        padding: 30px;
+    }
+}*/
+@media(max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .menuButton {
         display: block;
         cursor: pointer;
     }
-    .sidebar{
+
+    .sidebar {
         display: flex;
     }
-    .slider {
-        width: 95vw; 
-        height: 40vh; 
+
+    .sliderd {
+        display: flex;
+        justify-content: center;
+        margin-top: 120px;
     }
-    .container1{
+
+    .slider {
+        display: flex;
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .container1 {
         display: flex;
         flex-direction: column;
         width: 30%;
-        
     }
-    .amongustext{
-        margin-left: 10%;
+
+    .gry {
+        margin-left: 25%;
+    }
+
+    .gry h2 {
+        margin-left: -25%;
+    }
+
+    .okno1 h2 {
+        margin-left: 0%;
+    }
+
+    .close {
+        margin-right: 10%;
+    }
+
+    .container3 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .amongustext {
+        font-size: 40px;
+        left: 37%;
+        top: 40%;
+
+    }
+
+    .button_amongus {
+        width: 15%;
+        height: 15%;
+
+    }
+
+    .button_ghost {
+        width: 15%;
+        height: 15%;
+    }
+
+    .kupteraz {
+        display: flex;
+        justify-content: center;
+        margin-top: -10px;
     }
 }
 
-@media(max-width: 400px){
-    .sidebar{
-        width: 100%;
-    } 
-    .slider {
-        width: 100vw; 
-        height: 50vh; 
+@media (max-width: 425px) {
+    .sidebar {
+        display: flex;
     }
-    
+
+    .sliderd {
+        display: flex;
+        justify-content: center;
+        margin-top: 160px;
+        width: 100%;
+        padding-left: 20%;
+    }
+
+    .slider {
+        display: flex;
+    }
+
+    .amongustext {
+        font-size: 16px;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .button_amongus,
+    .button_ghost {
+        width: 80%;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .gry h2 {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container3 img {
+        width: 150%;
+        height: auto;
+    }
+
+    .footer {
+        width: 150%;
+    }
+
+    .amongustext {
+        font-size: 40px;
+        left: 26%;
+        top: 40%;
+
+    }
+
+    .button_amongus {
+        width: 60%;
+        height: 15%;
+
+    }
+
+    .button_ghost {
+        width: 60%;
+        height: 15%;
+
+    }
+
+    .kupteraz {
+        display: flex;
+        justify-content: center;
+        margin-top: -10px;
+    }
+
+    .box1 button {
+        padding: 15px 30px;
+    }
+
 }
