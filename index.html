@@ -1,105 +1,425 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal</title>
-   <style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f9f9f9;
-}
+    <title>Sklep z grami</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #202124;
+            color: #e8eaed;
+        }
 
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.btn:hover {
-    background-color: #e74c3c;
-}
+        .cart {
+            font-size: 1.2em;
+            margin-right: 20px;
+            margin-top: 13px;
+            cursor: pointer;
+        }
 
-/* Modal Styles */
-.modal {
-    display: none; /* Ukrycie domyślne */
-    position: fixed; /* Pozycja modal */
-    z-index: 1; /* Warstwa nad innymi elementami */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Dodanie przewijania */
-    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
-}
+        main {
+            padding: 2em;
+        }
 
-.modal-content {
-    background-color: white;
-    margin: 15% auto; /* Środek okna */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    border-radius: 10px;
-    text-align: left;
-}
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5em;
+            margin-top: 2em;
+        }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .game-card {
+            background: #333;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-}
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
 
-   </style>
+        .game-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        .game-card h3 {
+            margin: 0.5em 0;
+        }
+
+        .game-card p {
+            font-size: 1em;
+            color: #bbb;
+        }
+
+        .game-card button {
+            margin-top: auto;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease;
+        }
+
+        .game-card button:hover {
+            background-color: #135cb5;
+        }
+
+        .game-card button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .cart-modal-content {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-modal-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-modal-content li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .cart-modal-content button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-modal-content button:hover {
+            background-color: #c0392b;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            background-color: #c0392b;
+        }
+
+        .logo {
+            height: 100%;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8%;
+            background-color: rgba(46, 112, 46, 0.8);
+            backdrop-filter: blur(3px);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav li {
+            height: 50px;
+        }
+
+        nav a {
+            font-size: 20px;
+            height: 100%;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(72, 168, 72, 0.6);
+            color: #12161d;
+            border-radius: 20px;
+        }
+
+        nav li:first-child {
+            margin-right: auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: rgba(72, 168, 72, 0.6);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .sidebar li {
+            width: 100%;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        .menuButton {
+            display: none;
+        }
+
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 0 160px rgb(72, 168, 72);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .games-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 games per row */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .games-container {
+                grid-template-columns: 1fr; /* 1 game per row */
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(46, 112, 46, 0.9);
+                width: 100%;
+                display: none;
+            }
+
+            nav a {
+                padding: 1em;
+                width: 100%;
+            }
+
+            .menuButton {
+                display: block;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .game-card img {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
-<body>
-    <button id="openModal" class="btn">Pokaż Okienko</button>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Witaj w naszym sklepie!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt magnam exercitationem nesciunt facere sequi at ad est. Ad corporis, nisi fugit dolorum molestias quos eligendi voluptas, accusantium, consectetur id commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellat a accusamus molestias rerum, cupiditate omnis qui ducimus reprehenderit voluptate! Tempore voluptates obcaecati in expedita maiores facilis. Excepturi, laboriosam iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorum vitae culpa molestias saepe obcaecati id, quidem magni natus hic, pariatur quo odio? Veritatis doloribus nobis, molestiae voluptate sapiente quas? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam consequatur debitis officiis. Amet eaque debitis hic rerum illo accusantium. Illum vel similique vero perferendis quibusdam sunt molestiae blanditiis veniam voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, in laborum neque accusantium modi excepturi nemo quo suscipit ullam distinctio, nihil sint aut et nulla perferendis, assumenda voluptate provident voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae optio repudiandae quod sequi quas qui assumenda eveniet repellendus officiis dolor? Deserunt quam ratione modi pariatur repellendus, accusamus et sed voluptate!.</p>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px"
+                        viewBox="0 -960 960 960" width="26px" fill="#12161d">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></a></li>
+            <li><a href="#">Gry</a></li>
+            <li><a href="#" onclick="showModal()">O nas</a></li>
+            <li><a href="#">Informacje</a></li>
+            <li><a href="#">Pomoc</a></li>
+        </ul>
+        <ul>
+            <li class="logo"><img src="logo.png" alt="logo" style="height: 80px;"></li>
+            <li>
+                <div class="cart" onclick="toggleCartModal()">Koszyk: <span id="cart-count">0</span></div>
+            </li>
+            <li class="hide"><a href="#">Gry</a></li>
+            <li class="hide"><a href="#" onclick="showModal()">O nas</a></li>
+            <li class="hide"><a href="#">Informacje</a></li>
+            <li class="hide"><a href="#">Pomoc</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                        height="26px" viewBox="0 -960 960 960" width="26px" fill="#12161d">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <div class="games-container" id="games-container">
+
+        </div>
+    </main>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-modal-content">
+            <button class="close-modal" onclick="toggleCartModal()">Zamknij</button>
+            <h2>Twój koszyk</h2>
+            <ul id="cart-items">
+
+            </ul>
+            <p><strong>Łączna cena: <span id="total-price">0</span> zł</strong></p>
         </div>
     </div>
-
     <script>
-        // Pobierz elementy
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("openModal");
-const span = document.querySelector(".close");
+        const games = [
+            { id: 1, name: "Cyberpunk 2077", price: 199.99, image: "https://via.placeholder.com/300x200?text=Cyberpunk+2077" },
+            { id: 2, name: "The Witcher 3", price: 149.99, image: "https://via.placeholder.com/300x200?text=The+Witcher+3" },
+            { id: 3, name: "Minecraft", price: 99.99, image: "https://via.placeholder.com/300x200?text=Minecraft" },
+            { id: 4, name: "Elden Ring", price: 249.99, image: "https://via.placeholder.com/300x200?text=Elden+Ring" },
+            { id: 5, name: "Hollow Knight", price: 59.99, image: "https://via.placeholder.com/300x200?text=Hollow+Knight" },
+            { id: 6, name: "Terraria", price: 39.99, image: "https://via.placeholder.com/300x200?text=Terraria" },
+            { id: 7, name: "Red Dead Redemption 2", price: 219.99, image: "https://via.placeholder.com/300x200?text=RDR+2" },
+            { id: 8, name: "Dark Souls 3", price: 129.99, image: "https://via.placeholder.com/300x200?text=Dark+Souls+3" },
+        ];
 
-// Otwórz modal po kliknięciu przycisku
-btn.addEventListener("click", () => {
-    modal.style.display = "block";
-});
+        const cart = new Map(); 
 
-// Zamknij modal po kliknięciu X
-span.addEventListener("click", () => {
-    modal.style.display = "none";
-});
+        function renderGames() {
+            const gamesContainer = document.getElementById("games-container");
+            gamesContainer.innerHTML = ''; 
 
-// Zamknij modal po kliknięciu poza okienkiem
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
+            games.forEach(game => {
+                const gameCard = document.createElement("div");
+                gameCard.classList.add("game-card");
 
+                gameCard.innerHTML = `
+                    <img src="${game.image}" alt="${game.name}">
+                    <h3>${game.name}</h3>
+                    <p>Cena: ${game.price.toFixed(2)} zł</p>
+                    <button id="add-to-cart-${game.id}" onclick="addToCart(${game.id})">Dodaj do koszyka</button>
+                `;
+
+                gamesContainer.appendChild(gameCard);
+            });
+        }
+
+        function addToCart(gameId) {
+            const game = games.find(g => g.id === gameId);
+
+            if (!cart.has(gameId)) {
+                cart.set(gameId, game);
+                document.getElementById("cart-count").innerText = cart.size;
+                document.getElementById(`add-to-cart-${gameId}`).textContent = "Dodano";
+                document.getElementById(`add-to-cart-${gameId}`).disabled = true;
+            }
+        }
+
+        function toggleCartModal() {
+            const modal = document.getElementById("cart-modal");
+            modal.style.display = modal.style.display === "flex" ? "none" : "flex";
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = '';
+
+            let totalPrice = 0;
+
+            cart.forEach((game, gameId) => {
+                const cartItem = document.createElement("li");
+                cartItem.innerHTML = `
+                    <span>${game.name}</span>
+                    <span>${game.price.toFixed(2)} zł</span>
+                `;
+                cartItems.appendChild(cartItem);
+                totalPrice += game.price;
+            });
+
+            document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+        }
+
+        function showModal() {
+            alert("Dodatkowe informacje o sklepie...");
+        }
+
+        function showSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = "flex";
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.style.display = "none";
+        }
+
+        renderGames(); 
     </script>
 </body>
+
 </html>
