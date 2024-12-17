@@ -428,7 +428,7 @@ footer li {
 
 
 /*--------RESPONSYWNOSC---------*/
-/*@media(max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px) {
     .sliderd{
         margin-top: 14%;
         width: 100%;
@@ -484,7 +484,8 @@ footer li {
     .ikony a{
         padding: 30px;
     }
-}*/
+} 
+
 @media(max-width: 768px) {
     nav {
         display: flex;
@@ -580,7 +581,7 @@ footer li {
         justify-content: center;
         margin-top: 160px;
         width: 100%;
-        padding-left: 20%;
+        margin-left: 26%;
     }
 
     .slider {
@@ -604,7 +605,7 @@ footer li {
     .gry h2 {
         text-align: center;
         width: 100%;
-        margin: 0 auto;
+        margin-left: 18%;
     }
 
     .container3 img {
@@ -634,7 +635,6 @@ footer li {
         height: 15%;
 
     }
-
     .kupteraz {
         display: flex;
         justify-content: center;
@@ -644,5 +644,10 @@ footer li {
     .box1 button {
         padding: 15px 30px;
     }
-
+    .container2 h2{
+        margin: auto;
+    }
+    .close{
+        margin-top: 30%;
+    }
 }
